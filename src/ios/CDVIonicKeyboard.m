@@ -89,7 +89,7 @@ typedef enum : NSUInteger {
         NSLog(@"CDVIonicKeyboard: WARNING!!: Keyboard plugin works better with WK");
     }
 
-    if (isWK) {
+    if (isWK && doesResize) {
         [nc removeObserver:self.webView name:UIKeyboardWillHideNotification object:nil];
         [nc removeObserver:self.webView name:UIKeyboardWillShowNotification object:nil];
         [nc removeObserver:self.webView name:UIKeyboardWillChangeFrameNotification object:nil];
